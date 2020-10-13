@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
+RUN python -m pip install --upgrade pip setuptools wheel
 RUN pip3 install psycopg2 gunicorn Pillow pandas xlrd
 
 ADD requirements.txt /opt/code/requirements.txt
